@@ -62,7 +62,8 @@ body {
 /* HEADER */
 .header-top {
   display: flex;
-  max-width: 1060px;
+  max-width: 1090px;
+  padding: 0 15px;
   margin: 0 auto -8px;
   font-family: "PT Sans", Arial, sans-serif;
   color: #000000;
@@ -413,6 +414,7 @@ body {
   line-height: 36px;
   text-transform: uppercase;
   margin: 91px auto 29px;
+  padding: 0 15px;
 }
 .search-text {
   font-weight: 400;
@@ -420,6 +422,7 @@ body {
   line-height: 26px;
   max-width: 720px;
   margin: 0 auto 56px;
+  padding: 0 15px;
 }
 .search-link {
   display: block;
@@ -456,10 +459,13 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #e5e5e5;
+  background-position: center;
   color: #ffffff;
   text-align: center;
   padding-top: 94px;
   padding-bottom: 93px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .newsletter-title {
   font-weight: 700;
@@ -661,13 +667,15 @@ body {
   color: #000000;
 }
 .inner-header {
-  max-width: 1200px;
   margin: 0 auto;
   padding-top: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
   background-color: #e5e5e5;
   background-image: url(../images/catalog-background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   color: #ffffff;
   padding-bottom: 70px;
 }
@@ -977,10 +985,12 @@ body {
 }
 .sorting-container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   background-color: #ffffff;
   color: #000000;
-  max-width: 1057px;
+  max-width: 1087px;
+  padding: 0 15px;
   margin: 44px auto 53px;
 }
 .sorting-container .button {
@@ -1251,6 +1261,7 @@ body {
   padding-bottom: 30px;
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
+  margin: 0 auto;
 }
 .pagination-show-more {
   display: block;
@@ -1263,7 +1274,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   margin: 0 auto;
-  min-width: 620px;
+  width: 620px;
   padding: 17px;
   border: none;
   border-radius: 5px;
@@ -1287,8 +1298,11 @@ body {
 }
 .pagination-container {
   display: flex;
+  flex-wrap: wrap;
   margin: 29px auto 73px;
-  max-width: 1060px;
+  max-width: 1090px;
+  padding: 0 15px;
+  justify-content: center;
 }
 .pagination {
   display: flex;
@@ -1747,15 +1761,93 @@ body {
   .newsletter-email{
     width: 400px;
   }
+  .inner-header{
+    height: auto;
+  }
   .page-footer{
+    justify-content: center;
+    gap: 30px;
     margin-right: 15px;
     margin-left: 15px;
+  }
+  .catalog-filter{
+    flex-wrap: wrap;
+  }
+  .sorting-result{
+    margin-right: 100px;
+  }
+  .catalog-container{
+    align-items: center;
+  }
+  .catalog-list {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin-bottom: 34px;
+  }
+
+}
+@media (max-width:1024px) {
+  .catalog-filter{
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .catalog-filter-button{
+    margin-right: auto;
+  }
+  .catalog-filter-group:nth-child(3){
+    margin-right: 15px;
+    margin-left: 175px;
+  }
+  .catalog-filter-group:nth-child(3) .catalog-filter-title{
+    margin-bottom: 50px;
+  }
+  .sorting-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .sorting-result{
+    margin: 0 auto;
+  }
+  .select{
+    margin:15px auto;
+  }
+  .card-grid{
+    margin:15px auto 0;
+  }
+  .newsletter-noimage{
+    padding-bottom: 50px;
+  }
+}
+@media (max-width:870px) {
+  .catalog-filter-group:nth-child(2) {
+    margin-left: 100px;
+  }
+  .catalog-filter-group:nth-child(3) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width:786px) {
+  .inner-header-title {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .number-sorting{
+    margin-left: 0;
+  }
+  .pagination-show-more{
+    width: 300px;
   }
 }
 @media (max-width:823px) and (min-width:320px) {
   .header-bottom-logo{
     max-width: 300px;
-    max-height: 200px;
+    max-height: 230px;
   }
   .search-link{
     margin: 0 15px 93px;
@@ -1767,6 +1859,7 @@ body {
   .header-top{
     flex-direction: column;
     margin-bottom: 0;
+    padding: 0;
   }
   .navigation{
     flex-direction: column;
@@ -1780,7 +1873,6 @@ body {
     justify-content: space-between;
     align-self: center;
   }
-
   .advantages-list{
     display: grid;
     grid-template-columns: max-content;
@@ -1818,46 +1910,87 @@ body {
   }
   .advantages-item:nth-child(2) img,
   .advantages-item:nth-child(6) img{
-  height: 100%;
-  display: block;
-  width: 400px;
+    height: 100%;
+    display: block;
+    width: 300px;
 }
-.newsletter{
-  margin: 0 auto;
-}
-.newsletter-form{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.newsletter-email{
-  width: 250px;
-  border-radius: 15px;
-}
-.newsletter-button{
-  border-radius: 15px;
-  margin-top: 5px;
-}
-.page-footer-container{
-  flex-direction: column;
-  align-items: center;
-}
-.htmlacademy-link{
-  margin-top: 30px;
-}
-.footer-contacts-adress{
-  margin-top: 30px;
-}
+  .newsletter{
+    margin: 0 auto;
+  }
+  .newsletter-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .newsletter-email{
+    width: 300px;
+    border-radius: 15px;
+  }
+  .newsletter-button{
+    border-radius: 15px;
+    margin-top: 5px;
+  }
+  .page-footer-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .htmlacademy-link{
+    margin-top: 30px;
+  }
+  .footer-contacts-adress{
+    margin-top: 30px;
+  }
+  .catalog-list {
+    display: grid;
+    grid-template-columns: repeat(1, min-content);
+    gap: 10px;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    margin-bottom: 34px;
+  }
+  
 }
 @media (max-width:423px) and (min-width:320px){
+  .header-bottom-title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .navigation-link{
+    padding: 10px;
+  }
   .advantages-item:nth-child(2) img,
   .advantages-item:nth-child(6) img{
-  height: 100%;
-  display: block;
-  width: 300px;
-}
-
-.footer-contacts-adress-phone{
-  font-size: 35px;
-}
+    height: 100%;
+    display: block;
+    width: 300px;
+  }
+  .footer-contacts-adress-phone{
+    font-size: 35px;
+  }
+  .catalog-filter-group:nth-child(2) {
+    margin-left: 0;
+  }
+  .pagination-link {
+    min-width: 30px;
+    min-height: 30px;
+    padding: 14px 14px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .sorting-result{
+    text-align: center;
+    width: 290px;
+    font-size: 20px;
+  }
+  .number-sorting{
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .catalog-card{
+    padding: 5px;
+  }
+  .select{
+    width: 200px;
+  }
 }
